@@ -318,9 +318,9 @@ class TSStream extends EventEmitter
         });
         all([$patPromise, $pmtPromise])->then(function (array $patAndPmt) use ($client, $serviceId) {
             // Delay new streams so the client will always select main video and audio PIDs
-            $this->loop->addTimer(1, function () use ($patAndPmt, $client, $serviceId) {
+            //$this->loop->addTimer(1, function () use ($patAndPmt, $client, $serviceId) {
                 $this->addPMTPid($patAndPmt, $client, $serviceId);
-            });
+            //});
 
         });
         foreach ($pids as $pid) {
